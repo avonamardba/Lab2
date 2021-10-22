@@ -9,10 +9,6 @@ public class AirportsMapper extends Mapper<LongWritable, Text, AirportKeyCompara
 
     }
 
-    public AirportWritable(Text t) {
-        String fileData = t.toString();
-        String[] s = fileData.split(",");
-        d
-    }
+
 }
 }
