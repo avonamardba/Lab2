@@ -9,6 +9,4 @@ public class AirportsMapper extends Mapper<LongWritable, Text, AirportKeyCompara
 
     }
 
-
-}
 }
