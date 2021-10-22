@@ -1,5 +1,5 @@
 import org.apache.hadoop.io.LongWritable;
-import org.apache.hadoop.mapred.Mapper;
+import org.apache.hadoop.mapreduce.Mapper;
 
 public class AirportsMapper extends Mapper<LongWritable, Text, Text> {
 
