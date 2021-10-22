@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public class AirportsMapper {
+public class AirportsMapper {
+
 }
