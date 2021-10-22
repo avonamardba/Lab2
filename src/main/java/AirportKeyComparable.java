@@ -40,6 +40,6 @@ public abstract class AirportKeyComparable implements WritableComparable<Airport
     }
 
     public void write(DataOutput output) throws IOException {
-        key.write(output);
+        o
     }
 }
