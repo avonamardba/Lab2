@@ -3,6 +3,8 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 public class AirportsMapper extends Mapper<LongWritable, Text, AirportKeyComparable, Text> {
-    protected void map (LongWritable key Text)
+    protected void map (LongWritable key, Text value, Context context) {
+        
+    }
 
 }
