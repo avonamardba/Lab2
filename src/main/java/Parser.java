@@ -8,7 +8,7 @@ public class Parser {
         for (int i = 0; i < words.length; i++) {
             words[i] = words[i].replaceAll("\'", "");
         }
-        AirportId =
+        AirportId = 
     }
 
 }
