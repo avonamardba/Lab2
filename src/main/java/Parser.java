@@ -5,7 +5,10 @@ public class Parser {
 
     public Parser(String s) {
         String[] words = s.split(",");
-        AirportId = 
+        for (int i = 0; i < words.length; i++) {
+            words[i] = words[i].replaceAll("\'", "");
+        }
+        AirportId =
     }
 
 }
