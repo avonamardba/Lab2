@@ -1,20 +1,28 @@
+import org.apache.hadoop.io.DataInputBuffer;
 import org.apache.hadoop.io.WritableComparable;
 
+import java.io.DataOutput;
+import java.io.IOException;
+
 public abstract class AirportKeyComparable implements WritableComparable<AirportKeyComparable> {
-    private int key, type;
+    private int key, value;
 
     public AirportKeyComparable() {
         key = 0;
-        type = 0;
+        value = 0;
     }
 
     public AirportKeyComparable(int x, int y) {
         key = x;
-        type = y;
+        value = y;
     }
 
     public int GetKey() {
         return key;
+    }
+
+    public int GetValue() {
+        return value;
     }
 
     public int Hashcode() {
@@ -25,10 +33,13 @@ public abstract class AirportKeyComparable implements WritableComparable<Airport
         return Integer.compare(key, z.key);
     }
 
-    public int intCompareWith(AirportKeyComparable z) {
+    public int CompareWith(AirportKeyComparable z) {
         if (Integer.compare(key, z.key) != 0) {
             return Integer.compare(key, z.key);
-        } else return Integer.compare(type, z.type);
+        } else return Integer.compare(value, z.value);
     }
-    
+
+    public void write(DataOutput output) throws IOException {
+        
+    }
 }
