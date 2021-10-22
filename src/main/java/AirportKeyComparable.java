@@ -30,4 +30,5 @@ public abstract class AirportKeyComparable implements WritableComparable<Airport
             return Integer.compare(key, z.key);
         } else return Integer.compare(type, z.type);
     }
+    
 }
