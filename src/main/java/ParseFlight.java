@@ -6,7 +6,9 @@ public class ParseFlight {
     public ParseFlight(String s) {
         String[] words = s.split(",");
         flightId = words[14];
-        if (words[18])
+        if (words[18].isEmpty()) {
+            
+        }
     }
 
     public String GetAirportId() {
