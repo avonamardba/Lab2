@@ -1,3 +1,5 @@
 public class AirportWritable {
-    private int airportId
+    private int airportId;
+    
+
 }
