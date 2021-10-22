@@ -14,5 +14,19 @@ public abstract class AirportKeyComparable implements WritableComparable<Airport
         type = y;
     }
 
-    
+    public int GetKey() {
+        return key;
+    }
+
+    public int Hashcode() {
+        return Integer.hashCode(key);
+    }
+
+    public int CompareKeys(AirportKeyComparable z) {
+        return Integer.compare(key, z.key);
+    }
+
+    public intCompareWith(AirportKeyComparable z) {
+        int 
+    }
 }
