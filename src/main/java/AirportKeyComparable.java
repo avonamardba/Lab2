@@ -1,4 +1,3 @@
-import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.io.WritableComparable;
 
 public abstract class AirportKeyComparable implements WritableComparable<AirportKeyComparable> {
@@ -26,7 +25,10 @@ public abstract class AirportKeyComparable implements WritableComparable<Airport
         return Integer.compare(key, z.key);
     }
 
-    public intCompareWith(AirportKeyComparable z) {
-        int 
+    public int intCompareWith(AirportKeyComparable z) {
+        if (Integer.compare(key, z.key) != 0) {
+            return Integer.compare(key, z.key);
+        }
+        else return diff;
     }
 }
