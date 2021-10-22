@@ -7,8 +7,8 @@ public class ParseFlight {
     public ParseFlight(String s) {
         words = s.split(",");
         flightId = words[14];
-        if (words[18].isEmpty()) {
-
+        if (!words[18].isEmpty()) {
+            return flightId;            
         }
     }
 
