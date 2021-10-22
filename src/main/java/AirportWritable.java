@@ -6,7 +6,8 @@ public class AirportWritable {
     public AirportWritable(Text t) {
         String fileData = t.toString();
         String[] s = fileData.split(",");
-        
+        d
+        }
     }
 
 }
