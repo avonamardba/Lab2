@@ -3,8 +3,7 @@ import org.apache.hadoop.io.Text;
 public class Parser {
     private String airportId;
     private String airportName;
-
-
+    
     public Parser(String s) {
         String[] words = s.split(",[\"]");
         for (int i = 0; i < words.length; i++) {
