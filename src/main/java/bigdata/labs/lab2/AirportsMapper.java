@@ -1,4 +1,5 @@
-import bigdata.labs.lab2.AirportParser;
+package bigdata.labs.lab2;
+
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;

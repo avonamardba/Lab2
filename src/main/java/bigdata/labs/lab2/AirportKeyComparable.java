@@ -1,6 +1,5 @@
 package bigdata.labs.lab2;
 
-import org.apache.hadoop.io.DataInputBuffer;
 import org.apache.hadoop.io.WritableComparable;
 
 import java.io.DataInput;
@@ -18,14 +17,6 @@ public class AirportKeyComparable implements WritableComparable<AirportKeyCompar
     public AirportKeyComparable(int x, int y) {
         key = x;
         val = y;
-    }
-
-    public int getKey() {
-        return key;
-    }
-
-    public int getval() {
-        return val;
     }
 
     public int hashcode() {

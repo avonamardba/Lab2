@@ -1,5 +1,5 @@
 package bigdata.labs.lab2;
-import org.apache.hadoop.io.Text;
+
 
 public class AirportParser {
     String delimiter;
@@ -10,15 +10,15 @@ public class AirportParser {
         quote = q;
     }
 
-    public int getAirportID(String s){
+    public int getAirportID(String s) {
         return Integer.parseInt(getColumn(s, 0));
     }
 
-    public String getName(String s){
+    public String getName(String s) {
         return getColumn(s, 1);
     }
 
-    public String getColumn(String s, int number){
+    public String getColumn(String s, int number) {
         return s.split(delimiter)[number].replace(quote, "");
     }
 }

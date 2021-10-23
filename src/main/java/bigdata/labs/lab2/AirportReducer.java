@@ -1,10 +1,12 @@
+package bigdata.labs.lab2;
+
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 import java.util.Iterator;
 
-public class AirportReducer  extends Reducer<AirportKeyComparable, Text, Text, Text> {
+public class AirportReducer extends Reducer<AirportKeyComparable, Text, Text, Text> {
     @Override
     protected void reduce(AirportKeyComparable key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
@@ -13,7 +15,7 @@ public class AirportReducer  extends Reducer<AirportKeyComparable, Text, Text, T
         double max = 0, min = 1000000, sum = 0;
 
         String airportName = iter.next().toString();
-        while (iter.hasNext()){
+        while (iter.hasNext()) {
             count++;
 
             double currDelay = Double.parseDouble(iter.next().toString());
@@ -22,8 +24,8 @@ public class AirportReducer  extends Reducer<AirportKeyComparable, Text, Text, T
             sum += currDelay;
         }
 
-        if (count>0){
-            String delayString = min + " " + max + " " + sum/count;
+        if (count > 0) {
+            String delayString = min + " " + max + " " + sum / count;
             context.write(new Text(airportName), new Text(delayString));
         }
     }

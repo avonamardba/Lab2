@@ -1,6 +1,5 @@
 package bigdata.labs.lab2;
 
-import bigdata.labs.lab2.AirportIDComparator;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
