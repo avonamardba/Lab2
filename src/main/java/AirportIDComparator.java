@@ -11,4 +11,6 @@ public class AirportIDComparator extends WritableComparator {
         AirportKeyComparable y = (AirportKeyComparable) r;
         return x.compareKeys(y);
     }
+
+    
 }
