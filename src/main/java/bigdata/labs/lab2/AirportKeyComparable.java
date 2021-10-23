@@ -7,42 +7,44 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class AirportKeyComparable implements WritableComparable<AirportKeyComparable> {
-    private int key, val;
+    private int airportKey, datasetFlag;
 
     public AirportKeyComparable() {
-        key = 0;
-        val = 0;
+        airportKey = 0;
+        datasetFlag = 0;
     }
 
-    public AirportKeyComparable(int x, int y) {
-        key = x;
-        val = y;
+    public AirportKeyComparable(int key, int datasetFlag) {
+        this.airportKey = key;
+        this.datasetFlag = datasetFlag;
     }
 
     public int hashcode() {
-        return Integer.hashCode(key);
+        return Integer.hashCode(airportKey);
     }
 
     public int compareKeys(AirportKeyComparable z) {
-        return Integer.compare(key, z.key);
+        return Integer.compare(airportKey, z.airportKey);
     }
 
     @Override
     public int compareTo(AirportKeyComparable z) {
-        if (Integer.compare(key, z.key) != 0) {
-            return Integer.compare(key, z.key);
-        } else return Integer.compare(val, z.val);
+        if (Integer.compare(airportKey, z.airportKey) != 0) {
+            return Integer.compare(airportKey, z.airportKey);
+        } else {
+            return Integer.compare(datasetFlag, z.datasetFlag);
+        }
     }
 
     @Override
     public void write(DataOutput output) throws IOException {
-        output.writeInt(key);
-        output.writeInt(val);
+        output.writeInt(airportKey);
+        output.writeInt(datasetFlag);
     }
 
     @Override
     public void readFields(DataInput input) throws IOException {
-        key = input.readInt();
-        val = input.readInt();
+        airportKey = input.readInt();
+        datasetFlag = input.readInt();
     }
 }
