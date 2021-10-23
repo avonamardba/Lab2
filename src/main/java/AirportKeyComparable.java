@@ -34,7 +34,7 @@ public abstract class AirportKeyComparable implements WritableComparable<Airport
         return Integer.compare(key, z.key);
     }
 
-    public int CompareWith(AirportKeyComparable z) {
+    public int compareTo(AirportKeyComparable z) {
         if (Integer.compare(key, z.key) != 0) {
             return Integer.compare(key, z.key);
         } else return Integer.compare(val, z.val);
@@ -44,7 +44,7 @@ public abstract class AirportKeyComparable implements WritableComparable<Airport
         output.write(key);
         output.write(val);
     }
-    public void read(DataInput input) throws IOException {
+    public void readFields(DataInput input) throws IOException {
         key = input.readInt();
         val = input.readInt();
     }

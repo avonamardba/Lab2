@@ -1,25 +1,24 @@
 import org.apache.hadoop.io.Text;
 
-public class ParseFlight {
-    private String[] words;
-    private String flightId;
-    private String delay;
+public class FlightParser {
+    String delimiter;
+    String quote;
 
-    public ParseFlight(String s) {
-        words = s.split(",");
-        flightId = words[14];
-        delay = words[18];
-        if (!words[18].isEmpty()) {
-            return flightId;
-        }
+    public FlightParser(String d, String q) {
+        delimiter = d;
+        quote = q;
     }
 
-    public String GetAirportId() {
-        return airportId;
+    public int getAirportID(String s){
+        return Integer.parseInt(getColumn(s, 14));
     }
 
-    public String GetAirportName() {
-        return airportName;
+    public String getDelay(String s){
+        return getColumn(s, 18);
+    }
+
+    public String getColumn(String s, int number){
+        return s.split(delimiter)[number].replace(quote, "");
     }
 
 

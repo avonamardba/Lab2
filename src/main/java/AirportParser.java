@@ -1,25 +1,23 @@
 import org.apache.hadoop.io.Text;
 
-public class Parser {
-    private String airportId;
-    private String airportName;
+public class AirportParser {
+    String delimiter;
+    String quote;
 
-    public Parser(String s) {
-        String[] words = s.split(",[\"]");
-        for (int i = 0; i < words.length; i++) {
-            words[i] = words[i].replaceAll("\'", "");
-        }
-        airportId = words[0];
-        airportName = words[1];
+    public AirportParser(String d, String q) {
+        delimiter = d;
+        quote = q;
     }
 
-    public String GetAirportId() {
-        return airportId;
+    public int getAirportID(String s){
+        return Integer.parseInt(getColumn(s, 0));
     }
 
-    public String GetAirportName() {
-        return airportName;
+    public String getName(String s){
+        return getColumn(s, 1);
     }
 
-
+    public String getColumn(String s, int number){
+        return s.split(delimiter)[number].replace(quote, "");
+    }
 }
