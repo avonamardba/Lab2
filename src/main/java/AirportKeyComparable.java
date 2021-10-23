@@ -43,8 +43,8 @@ public class AirportKeyComparable implements WritableComparable<AirportKeyCompar
 
     @Override
     public void write(DataOutput output) throws IOException {
-        output.write(key);
-        output.write(val);
+        output.writeInt(key);
+        output.writeInt(val);
     }
 
     @Override
