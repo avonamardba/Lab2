@@ -7,8 +7,11 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class AirportsMapper extends Mapper<LongWritable, Text, AirportKeyComparable, Text> {
+    private static int DELIMITER = ",";
+    private static int QUOTATION = 18;
+
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        AirportParser parser = new AirportParser(",", "\"");
+        AirportParser parser = new AirportParser(DELIMITER, QUOTATION);
         int code = parser.getAirportID(value.toString());
         String name = parser.getName(value.toString());
         context.write(new AirportKeyComparable(code, 0), new Text(name));
