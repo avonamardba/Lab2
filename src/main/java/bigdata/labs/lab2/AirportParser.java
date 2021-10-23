@@ -4,26 +4,27 @@ package bigdata.labs.lab2;
 public class AirportParser {
     String delimiter;
     String quote;
+    private String[] columns;
     private static int AIRPORT_ID = 0;
     private static int AIRPORT_NAME = 1;
     private static String EMPTY_STR = "";
 
-    public AirportParser(String d, String q, String s) {
+    public AirportParser(String d, String q, String string) {
         delimiter = d;
         quote = q;
 
-        s = s.split(d);
+        columns = string.split(d);
     }
 
-    public int getAirportID(String s) {
-        return Integer.parseInt(getColumn(s, AIRPORT_ID));
+    public int getAirportID() {
+        return Integer.parseInt(getColumn(AIRPORT_ID));
     }
 
-    public String getName(String s) {
-        return getColumn(s, AIRPORT_NAME);
+    public String getName() {
+        return getColumn(AIRPORT_NAME);
     }
 
-    public String getColumn(String s, int number) {
-        return s.split(delimiter)[number].replace(quote, EMPTY_STR);
+    public String getColumn(int number) {
+        return columns[number].replace(quote, EMPTY_STR);
     }
 }
