@@ -5,6 +5,7 @@ public class FlightParser {
     String quote;
     private static int FLIGHT = 14;
     private static int DELAY = 18;
+    private static String EMPTY_STR = "";
 
     public FlightParser(String d, String q) {
         delimiter = d;
@@ -20,6 +21,6 @@ public class FlightParser {
     }
 
     public String getColumn(String s, int number) {
-        return s.split(delimiter)[number].replace(quote, "");
+        return s.split(delimiter)[number].replace(quote, EMPTY_STR);
     }
 }
