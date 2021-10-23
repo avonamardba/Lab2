@@ -6,6 +6,7 @@ public class AirportParser {
     String quote;
     private static int AIRPORT_ID = 0;
     private static int AIRPORT_NAME = 1;
+    private static String EMPTY_STR = "";
 
     public AirportParser(String d, String q, String s) {
         delimiter = d;
@@ -23,6 +24,6 @@ public class AirportParser {
     }
 
     public String getColumn(String s, int number) {
-        return s.split(delimiter)[number].replace(quote, "");
+        return s.split(delimiter)[number].replace(quote, EMPTY_STR);
     }
 }
