@@ -6,7 +6,7 @@ import org.apache.hadoop.mapreduce.Partitioner;
 public class AirportIDPartitioner extends Partitioner<AirportKeyComparable, Text> {
 
     @Override
-    public int getPartition(AirportKeyComparable key, Text value, int i) {
-        return key.hashcode() % i;
+    public int getPartition(AirportKeyComparable airportKey, Text flag, int i) {
+        return airportKey.hashcode() % i;
     }
 }
