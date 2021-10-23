@@ -5,7 +5,7 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public abstract class AirportKeyComparable implements WritableComparable<AirportKeyComparable> {
+public class AirportKeyComparable implements WritableComparable<AirportKeyComparable> {
     private int key, val;
 
     public AirportKeyComparable() {

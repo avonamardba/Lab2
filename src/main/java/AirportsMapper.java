@@ -8,7 +8,7 @@ public class AirportsMapper extends Mapper<LongWritable, Text, AirportKeyCompara
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         AirportParser parser = new AirportParser(",", "\"");
         int code = parser.getAirportID(value.toString());
-        context.write(new AirportKeyComparable() {
+        context.write(new AirportKeyComparable(code, 0), ) {
         });
     }
 }
