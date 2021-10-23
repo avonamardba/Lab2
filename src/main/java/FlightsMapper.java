@@ -6,8 +6,9 @@ import java.io.IOException;
 
 public class FlightsMapper extends Mapper<LongWritable, Text, AirportKeyComparable, Text> {
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        FlightParser parser = new FlightParser(",", "\"");
-        int code = parser.getAirportID(value.toString());
-        context.write(new AirportKeyComparable(code, 0), new Text(parser.getDelay(value.toString())));
+        String[] cols = value.toString().split(",");
+        int code = Integer.parseInt(cols[14].replace("\"", ""));
+        String delay = cols[18].replace("\"", "");
+        context.write(new AirportKeyComparable(code, 1), new Text(delay));
     }
 }

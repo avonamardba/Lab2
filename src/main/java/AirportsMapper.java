@@ -9,6 +9,6 @@ public class AirportsMapper extends Mapper<LongWritable, Text, AirportKeyCompara
         String[] cols = value.toString().split(",");
         int code = Integer.parseInt(cols[0].replace("\"", ""));
         String name = cols[1].replace("\"", "");
-        context.write(new AirportKeyComparable(code, 0), new Text(delay));
+        context.write(new AirportKeyComparable(code, 0), new Text(name));
     }
 }
