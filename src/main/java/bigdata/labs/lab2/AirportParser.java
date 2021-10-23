@@ -4,6 +4,8 @@ package bigdata.labs.lab2;
 public class AirportParser {
     String delimiter;
     String quote;
+    private static int AIRPORT_ID = 0;
+    private static int AIRPORT_NAME = 1;
 
     public AirportParser(String d, String q) {
         delimiter = d;
@@ -11,11 +13,11 @@ public class AirportParser {
     }
 
     public int getAirportID(String s) {
-        return Integer.parseInt(getColumn(s, 0));
+        return Integer.parseInt(getColumn(s, AIRPORT_ID));
     }
 
     public String getName(String s) {
-        return getColumn(s, 1);
+        return getColumn(s, AIRPORT_NAME);
     }
 
     public String getColumn(String s, int number) {
