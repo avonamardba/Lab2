@@ -9,6 +9,6 @@ public class AirportIDComparator extends WritableComparator {
     public int compare(WritableComparable l, WritableComparable r){
         AirportKeyComparable x = (AirportKeyComparable) l;
         AirportKeyComparable y = (AirportKeyComparable) r;
-        return x.c
+        return x.compareKeys(y);
     }
 }

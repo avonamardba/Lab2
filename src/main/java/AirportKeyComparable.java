@@ -18,19 +18,19 @@ public abstract class AirportKeyComparable implements WritableComparable<Airport
         val = y;
     }
 
-    public int GetKey() {
+    public int getKey() {
         return key;
     }
 
-    public int Getval() {
+    public int getval() {
         return val;
     }
 
-    public int Hashcode() {
+    public int hashcode() {
         return Integer.hashCode(key);
     }
 
-    public int CompareKeys(AirportKeyComparable z) {
+    public int compareKeys(AirportKeyComparable z) {
         return Integer.compare(key, z.key);
     }
 
