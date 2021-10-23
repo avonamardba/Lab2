@@ -3,6 +3,7 @@ package bigdata.labs.lab2;
 public class FlightParser {
     String delimiter;
     String quote;
+    
 
     public FlightParser(String d, String q) {
         delimiter = d;
