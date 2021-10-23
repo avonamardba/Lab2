@@ -20,6 +20,4 @@ public class FlightParser {
     public String getColumn(String s, int number){
         return s.split(delimiter)[number].replace(quote, "");
     }
-
-
 }
