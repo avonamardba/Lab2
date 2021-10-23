@@ -34,16 +34,20 @@ public class AirportKeyComparable implements WritableComparable<AirportKeyCompar
         return Integer.compare(key, z.key);
     }
 
+    @Override
     public int compareTo(AirportKeyComparable z) {
         if (Integer.compare(key, z.key) != 0) {
             return Integer.compare(key, z.key);
         } else return Integer.compare(val, z.val);
     }
 
+    @Override
     public void write(DataOutput output) throws IOException {
         output.write(key);
         output.write(val);
     }
+
+    @Override
     public void readFields(DataInput input) throws IOException {
         key = input.readInt();
         val = input.readInt();
