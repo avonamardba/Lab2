@@ -1,3 +1,6 @@
+package bigdata.labs.lab2;
+
+import bigdata.labs.lab2.AirportIDComparator;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -6,8 +9,8 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class AirportJoinApp {
-    public static void main(String args[]) throws Exception{
-        if (args.length != 3){
+    public static void main(String args[]) throws Exception {
+        if (args.length != 3) {
             System.err.println("Arguments error");
             System.exit(1);
         }

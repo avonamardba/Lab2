@@ -1,3 +1,5 @@
+package bigdata.labs.lab2;
+
 import org.apache.hadoop.io.DataInputBuffer;
 import org.apache.hadoop.io.WritableComparable;
 
